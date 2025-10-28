@@ -177,7 +177,7 @@ class CountryService
             if (!$disk->exists('cache')) {
                 $disk->makeDirectory('cache');
             }
-            $imagePath = storage_path('app/public/cache/summary.png');
+            $imagePath = storage_path('cache/summary.png');
 
             if (!is_writable(dirname($imagePath))) {
                 throw new \Exception('Cannot write to directory: ' . dirname($imagePath));
