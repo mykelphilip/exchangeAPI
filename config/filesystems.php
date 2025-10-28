@@ -62,7 +62,8 @@ return [
 
         'persistent' => [
             'driver' => 'local',
-            'root' => env('RAILWAY_VOLUME_PATH', '/data'),
+            'root' => env('RAILWAY_VOLUME_PATH', storage_path('app')),
+        'visibility' => 'private',
         ],
     ],
 

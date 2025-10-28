@@ -166,7 +166,7 @@ class CountryService
 if (app()->environment('production')) {
     // Use a persistent driver
     $disk = Storage::disk('persistent');// or whatever your env uses
-            $imagePath = storage_path('/data/cache/summary.png');
+            $imagePath = storage_path('app/private/cache/summary.png');
 
 } else {
     $disk = Storage::disk('local');
