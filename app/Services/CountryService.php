@@ -169,7 +169,7 @@ class CountryService
 //             $imagePath = storage_path('app/private/cache/summary.png');
 
 // } else {
-    $disk = Storage::disk('local');
+    $disk = Storage::disk('public');
             
 
 // }
@@ -177,7 +177,7 @@ class CountryService
             if (!$disk->exists('cache')) {
                 $disk->makeDirectory('cache');
             }
-            $imagePath = storage_path('app/private/cache/summary.png');
+            $imagePath = storage_path('app/public/cache/summary.png');
 
             if (!is_writable(dirname($imagePath))) {
                 throw new \Exception('Cannot write to directory: ' . dirname($imagePath));
