@@ -132,9 +132,9 @@ public function show(string $name)
     public function image()
     {
 
-if (app()->environment('production')) {
-            $path = storage_path('app/private/cache/summary.png');
-}
+// if (app()->environment('production')) {
+//             $path = storage_path('app/private/cache/summary.png');
+// }
         $path = storage_path('app/private/cache/summary.png');
         if (!file_exists($path)) {
             return response()->json(['error' => 'Summary image not found'], 404);

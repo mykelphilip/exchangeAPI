@@ -163,20 +163,21 @@ class CountryService
             imagettftext($img, 14, 0, 20, 350, $black, $fontPath, "Last refreshed at: " . $lastRefreshedAt->toDateTimeString());
 
             // Creating a cache to store images
-if (app()->environment('production')) {
-    // Use a persistent driver
-    $disk = Storage::disk('persistent');// or whatever your env uses
-            $imagePath = storage_path('app/private/cache/summary.png');
+// if (app()->environment('production')) {
+//     // Use a persistent driver
+//     $disk = Storage::disk('persistent');// or whatever your env uses
+//             $imagePath = storage_path('app/private/cache/summary.png');
 
-} else {
+// } else {
     $disk = Storage::disk('local');
-            $imagePath = storage_path('app/private/cache/summary.png');
+            
 
-}
+// }
 
             if (!$disk->exists('cache')) {
                 $disk->makeDirectory('cache');
             }
+            $imagePath = storage_path('app/private/cache/summary.png');
 
             if (!is_writable(dirname($imagePath))) {
                 throw new \Exception('Cannot write to directory: ' . dirname($imagePath));
